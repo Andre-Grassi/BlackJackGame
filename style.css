@@ -1,0 +1,61 @@
+:root,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* flex */
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: black;
+  min-height: 7rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+h1 {
+  color: white;
+  font-size: 4rem;
+}
+
+main {
+  /* In this page, the height of main can vary, but I think that in the actual game I will make it static to avoid elements aglutinating on the middle */
+  height: 60%;
+  background-color: antiquewhite;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+}
+
+section {
+  height: 100%;
+  background-color: rgb(195, 116, 13);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+}
+
+section > div {
+  font-size: 2rem;
+}
+
+footer {
+  height: 10%;
+}
