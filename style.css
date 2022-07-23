@@ -12,6 +12,7 @@ body {
 * {
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Josefin Sans', Arial, sans-serif;
 }
 
 header {
@@ -52,10 +53,31 @@ section {
   gap: 20%;
 }
 
-section > div {
+section > div > h2 {
   font-size: 2rem;
 }
 
 footer {
   height: 10%;
+  /* min-height: 3rem; */
+  background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+footer > h2 {
+  font-size: 1.5rem;
+}
+
+#contact {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(13, 0, 253);
+  width: 70%;
+  flex-wrap: wrap;
 }
