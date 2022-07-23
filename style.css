@@ -25,6 +25,10 @@ header {
   flex-grow: 1;
 }
 
+header > img {
+  width: 5rem;
+}
+
 h1 {
   color: white;
   font-size: 4rem;
@@ -44,7 +48,14 @@ main {
 
 section {
   height: 100%;
-  background-color: rgb(195, 116, 13);
+  width: 100%;
+
+  background-color: rgb(77, 77, 77);
+  background-image: url(Images/clover.png), url(images/spade.png);
+  background-size: 12.5%;
+  background-position: 15%, 85%;
+
+  background-repeat: no-repeat;
 
   display: flex;
   flex-direction: column;
