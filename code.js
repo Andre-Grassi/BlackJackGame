@@ -1,5 +1,9 @@
+// Header
 let howTo = document.querySelector('#menu > div:last-child > h2 ')
 console.log(howTo)
+
+// Text teaching how to play
+let textRules = document.querySelector('blockquote')
 
 howTo.addEventListener('click', showRules)
 
@@ -24,5 +28,33 @@ function showRules() {
   else {
     // Re-enable background
     menuStyle.backgroundImage = 'url(Images/clover.png), url(Images/spade.png)'
+  }
+}
+
+// Selecting rules pages
+let backArrow = document.getElementById('back')
+let advanceArrow = document.getElementById('advance')
+
+backArrow.addEventListener('click', back)
+advanceArrow.addEventListener('click', advance)
+
+let pages = 0
+function advance() {
+  ++pages
+  switch (pages) {
+    case 1:
+      textRules.textContent =
+        'You receive two cards face up. The dealer also receives two cards - one of them face up, the other face down.'
+      break
+
+    case 2:
+      textRules.innerHTML =
+        'Decide whether to <strong>Hit</strong> (Ask the dealer for another card) or <strong>Stand</strong> (the dealer will reveal their facedown card).'
+      break
+
+    case 3:
+      textRules.innerHTML =
+        "See who is the <strong>winner</strong>: If your hand is closer to 21 than that of the dealer, you <strong>win</strong>. If the dealer has 21 or a closer score to 21 than you, then you've <strong>lost</strong>"
+      break
   }
 }

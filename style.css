@@ -126,6 +126,35 @@ blockquote {
   /* margin-bottom: ; Maybe add margin*/
 }
 
+cite {
+  border-top: solid black 0.125rem; /* See if this breaks any mobile layout */
+}
+
+#back,
+#advance {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+
+  background-image: url(Images/right-arrow.png);
+  background-size: 0.75rem;
+}
+
+/* Change the cursor to indicate that the user can click */
+#back,
+#advance:hover {
+  cursor: pointer;
+}
+
+#advance {
+  background-size: 12px;
+}
+
+#back {
+  /* Rotate the right arrow so it points to the left side */
+  rotate: 180deg;
+}
+
 footer {
   height: 10%;
   min-height: 5.4rem; /*Como é display flex, conforme aumento a altura do footer, o resto diminui, no caso quem vai diminuir enquanto o header está na min height de 7rem é o main, se o header for maior q 7 rem ele também diminuiria na mesma proporção que o main pois o shrink inicial é sempre 1 para todos */
