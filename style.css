@@ -117,6 +117,8 @@ hr {
   background-image: none;
   background-color: #fff;
 
+  border-top: solid black 0.25rem; /* See if this breaks any mobile layout */
+
   text-align: center;
 }
 
@@ -151,6 +153,13 @@ footer > h2 {
   /* text-align: center; Maybe? */
 }
 
+@media (max-height: 490px) {
+  #how-to {
+    /* Top and bottom padding: 0.25rem and left and right padding: 1rem*/
+    padding: 0.25rem 1rem;
+  }
+}
+
 @media (max-height: 390px) {
   header {
     min-height: 4rem;
@@ -163,5 +172,12 @@ footer > h2 {
   #menu > div {
     max-width: 45%;
     min-width: 14.54rem;
+  }
+}
+
+@media (max-height: 340px) {
+  /* Maybe use this when max height is even higher, this optimize use for mobile devices. Also, depending on the next texts maybe I will need to adapt the width of all the media queries */
+  #menu > div {
+    min-width: 70%;
   }
 }
