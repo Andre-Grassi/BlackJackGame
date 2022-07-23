@@ -62,7 +62,7 @@ section {
   width: 100%;
 
   background-color: var(--sec-bg-color);
-  background-image: url(Images/clover.png), url(images/spade.png);
+  background-image: url(Images/clover.png), url(Images/spade.png);
   background-size: 12.5%;
   background-position: 15%, 85%;
 
@@ -77,6 +77,9 @@ section {
 
 section > div > h2 {
   font-size: 2rem;
+
+  /* Disable selection of these texts */
+  user-select: none;
 }
 
 /* Activates when pointer is on top of "Play" or "How to play" */
