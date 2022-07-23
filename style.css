@@ -57,9 +57,19 @@ section > div > h2 {
   font-size: 2rem;
 }
 
+/* Activates when pointer is on top of "Play" or "How to play" */
+section > div > h2:hover {
+  /* Change color of text */
+  color: red;
+  transition: 0.5s;
+
+  /* Change cursor to pointer */
+  cursor: pointer;
+}
+
 footer {
   height: 10%;
-  /* min-height: 3rem; */
+  min-height: 5.4rem; /*Como é display flex, conforme aumento a altura do footer, o resto diminui, no caso quem vai diminuir enquanto o header está na min height de 7rem é o main, se o header for maior q 7 rem ele também diminuiria na mesma proporção que o main pois o shrink inicial é sempre 1 para todos */
   background-color: black;
   color: white;
 
@@ -80,4 +90,10 @@ footer > h2 {
   background-color: rgb(13, 0, 253);
   width: 70%;
   flex-wrap: wrap;
+}
+
+@media (max-height: 390px) {
+  header {
+    min-height: 4rem;
+  }
 }
