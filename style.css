@@ -58,18 +58,15 @@ main {
 }
 
 #menu > div {
-  max-width: 45%;
+  /* With 20rem, the transition to 45% when vw is < 700px is smooth */
+  max-width: 20rem;
 }
 
-/* How to play text */
-#how-to {
-  text-align: center;
-}
-
-section {
+main > section {
   height: 100%;
   width: 100%;
 
+  /* Maybe move background and other thins to the 'main' tag */
   background-color: var(--sec-bg-color);
   background-image: url(Images/clover.png), url(Images/spade.png);
   background-size: 12.5%;
@@ -112,6 +109,21 @@ hr {
   border-style: solid;
 }
 
+/* When the user clicks on How To Play, this section appears */
+#how-to {
+  width: 100%;
+  padding: 1rem; /*Modify the top bottom padding when height is low*/
+
+  background-image: none;
+  background-color: #fff;
+
+  text-align: center;
+}
+
+blockquote {
+  /* margin-bottom: ; Maybe add margin*/
+}
+
 footer {
   height: 10%;
   min-height: 5.4rem; /*Como é display flex, conforme aumento a altura do footer, o resto diminui, no caso quem vai diminuir enquanto o header está na min height de 7rem é o main, se o header for maior q 7 rem ele também diminuiria na mesma proporção que o main pois o shrink inicial é sempre 1 para todos */
@@ -148,10 +160,8 @@ footer > h2 {
 }
 
 @media (max-width: 700px) {
-}
-
-#how-to {
-  background-image: none;
-  background-color: #fff;
-  width: 100%;
+  #menu > div {
+    max-width: 45%;
+    min-width: 14.54rem;
+  }
 }
