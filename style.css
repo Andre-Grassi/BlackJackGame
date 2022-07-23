@@ -57,6 +57,14 @@ main {
   align-items: center;
 }
 
+#menu > div {
+  max-width: 45%;
+}
+
+#how-to {
+  text-align: center;
+}
+
 section {
   height: 100%;
   width: 100%;
@@ -77,6 +85,9 @@ section {
 
 section > div > h2 {
   font-size: 2rem;
+
+  /* Alig text in center, this way even when te display is really thin, the text will continue centered */
+  text-align: center;
 
   /* Disable selection of these texts */
   user-select: none;
@@ -123,6 +134,8 @@ footer > h2 {
   background-color: rgb(13, 0, 253);
   width: 70%;
   flex-wrap: wrap;
+
+  /* text-align: center; Maybe? */
 }
 
 @media (max-height: 390px) {
@@ -131,4 +144,10 @@ footer > h2 {
 
     flex-direction: row-reverse;
   }
+}
+
+#how-to {
+  background-image: none;
+  background-color: #fff;
+  width: 100%;
 }
