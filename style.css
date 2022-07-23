@@ -1,6 +1,15 @@
+:root {
+  --main-bg-color: black;
+  --sec-bg-color: rgb(77, 77, 77);
+
+  --main-txt-color: white;
+  /* --sec-txt-color: black; */
+}
+
 :root,
 body {
   height: 100%;
+  background-color: var(--sec-bg-color);
 }
 
 body {
@@ -16,12 +25,14 @@ body {
 }
 
 header {
-  background-color: black;
+  background-color: var(--main-bg-color);
   min-height: 7rem;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
   flex-grow: 1;
 }
 
@@ -37,7 +48,7 @@ h1 {
 main {
   /* In this page, the height of main can vary, but I think that in the actual game I will make it static to avoid elements aglutinating on the middle */
   height: 60%;
-  background-color: antiquewhite;
+  background-color: var(--sec-bg-color);
 
   display: flex;
 
@@ -50,7 +61,7 @@ section {
   height: 100%;
   width: 100%;
 
-  background-color: rgb(77, 77, 77);
+  background-color: var(--sec-bg-color);
   background-image: url(Images/clover.png), url(images/spade.png);
   background-size: 12.5%;
   background-position: 15%, 85%;
@@ -71,17 +82,25 @@ section > div > h2 {
 /* Activates when pointer is on top of "Play" or "How to play" */
 section > div > h2:hover {
   /* Change color of text */
-  color: red;
+  color: rgb(210, 0, 0);
   transition: 0.5s;
 
   /* Change cursor to pointer */
   cursor: pointer;
 }
 
+hr {
+  height: 2px;
+  width: 30%;
+  background-color: black;
+  border-color: black;
+  border-style: solid;
+}
+
 footer {
   height: 10%;
   min-height: 5.4rem; /*Como é display flex, conforme aumento a altura do footer, o resto diminui, no caso quem vai diminuir enquanto o header está na min height de 7rem é o main, se o header for maior q 7 rem ele também diminuiria na mesma proporção que o main pois o shrink inicial é sempre 1 para todos */
-  background-color: black;
+  background-color: var(--main-bg-color);
   color: white;
 
   display: flex;
@@ -106,5 +125,7 @@ footer > h2 {
 @media (max-height: 390px) {
   header {
     min-height: 4rem;
+
+    flex-direction: row-reverse;
   }
 }
