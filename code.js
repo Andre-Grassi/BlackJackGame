@@ -13,21 +13,31 @@ function showRules() {
     '#menu > div:first-child, #menu > hr'
   )
 
+  // If the rules are shown, then isActive = true, otherwise it's false
   isActive = isActive == false ? true : false
 
-  // Hide elements to open space for text
+  // Hide elements to open space for text / Show elements if the user goes back
   hideList.forEach(function (el) {
     el.toggleAttribute('hidden')
   })
+
+  // Show text teaching how to play / Hide text if the user goes back
+  let howToPlayText = document.getElementById('how-to')
+  howToPlayText.toggleAttribute('hidden')
 
   // Get menu's section
   let menu = document.getElementById('menu')
   menuStyle = menu.style
 
-  if (isActive == true) menuStyle.backgroundImage = 'none' //disable background
-  else {
-    // Re-enable background
+  // If text is shown, disable background and change the text of the h2 to 'Menu' (so the user can see how to come back to the menu), otherwise show it and change the header's text to 'How to play' again
+  // Disable background, changes header's text
+  if (isActive == true) {
+    menuStyle.backgroundImage = 'none'
+    howTo.textContent = 'Menu'
+  } else {
+    // Re-enable background, changes header's text
     menuStyle.backgroundImage = 'url(Images/clover.png), url(Images/spade.png)'
+    howTo.textContent = 'How to play'
   }
 }
 
