@@ -1,6 +1,5 @@
 // Header
 let howTo = document.querySelector('#menu > div:last-child > h2 ')
-console.log(howTo)
 
 // Text teaching how to play
 let textRules = document.querySelector('blockquote')
