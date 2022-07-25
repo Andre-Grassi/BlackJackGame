@@ -24,13 +24,6 @@ body {
   font-family: 'Josefin Sans', Arial, sans-serif;
 }
 
-/*
-button {
-   border-radius: 0;
-  border-style: none;
-  background-color: white;
-} */
-
 header {
   background-color: var(--main-bg-color);
   min-height: 7rem;
@@ -88,7 +81,17 @@ main > section {
   gap: 20%;
 }
 
-section > div > h2 {
+.button {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button > h2 {
   font-size: 2rem;
 
   /* Alig text in center, this way even when te display is really thin, the text will continue centered */
@@ -99,7 +102,7 @@ section > div > h2 {
 }
 
 /* Activates when pointer is on top of "Play" or "How to play" */
-section > div > h2:hover {
+button > h2:hover {
   /* Change color of text */
   color: rgb(210, 0, 0);
   transition: 0.5s;

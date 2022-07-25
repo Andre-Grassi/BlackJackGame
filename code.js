@@ -1,5 +1,5 @@
 // Header
-let howTo = document.querySelector('#menu > div:last-child > h2 ')
+let howTo = document.querySelector('#menu > div:last-child > div > button')
 
 // Text teaching how to play
 let textRules = document.querySelector('blockquote')
@@ -9,7 +9,7 @@ howTo.addEventListener('click', showRules)
 let isActive = false
 function showRules() {
   let hideList = document.querySelectorAll(
-    '#menu > div:first-child, #menu > hr'
+    '#menu > div:first-child, #menu > div:first-child > button, #menu > hr'
   )
 
   // If the rules are shown, then isActive = true, otherwise it's false
