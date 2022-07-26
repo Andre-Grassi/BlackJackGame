@@ -24,6 +24,16 @@ body {
   font-family: 'Josefin Sans', Arial, sans-serif;
 }
 
+/* 
+
+
+
+  >-------------- HEADER --------------<
+  
+
+  
+*/
+
 header {
   background-color: var(--main-bg-color);
   min-height: 7rem;
@@ -36,6 +46,7 @@ header {
   flex-grow: 1;
 }
 
+/* Change width of the cards' image at the header */
 header > img {
   width: 5rem;
 }
@@ -44,6 +55,16 @@ h1 {
   color: white;
   font-size: 4rem;
 }
+
+/*
+
+  
+  
+  >-------------- MAIN --------------<
+  
+
+
+*/
 
 main {
   /* In this page, the height of main can vary, but I think that in the actual game I will make it static to avoid elements aglutinating on the middle */
@@ -57,12 +78,18 @@ main {
   align-items: center;
 }
 
+/* Edit divs that wrap the buttons and the section that teaches to play */
 #menu > div {
   /* With 20rem, the transition to 45% when vw is < 700px is smooth */
   max-width: 20rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-self: flex-start;
 }
 
-main > section {
+#menu {
   height: 100%;
   width: 100%;
 
@@ -81,18 +108,16 @@ main > section {
   gap: 20%;
 }
 
-.button {
-  display: flex;
-  justify-content: center;
-}
-
+/* BUTTONS */
 button {
+  font-size: 2rem;
+
+  /* Remove background and border */
   background-color: transparent;
   border: none;
-}
 
-button > h2 {
-  font-size: 2rem;
+  /* Remove padding */
+  padding: 0;
 
   /* Alig text in center, this way even when te display is really thin, the text will continue centered */
   text-align: center;
@@ -102,7 +127,7 @@ button > h2 {
 }
 
 /* Activates when pointer is on top of "Play" or "How to play" */
-button > h2:hover {
+section > div > button:hover {
   /* Change color of text */
   color: rgb(210, 0, 0);
   transition: 0.5s;
@@ -111,6 +136,7 @@ button > h2:hover {
   cursor: pointer;
 }
 
+/* Line that separates both buttons */
 hr {
   height: 2px;
   width: 30%;
@@ -118,6 +144,10 @@ hr {
   border-color: black;
   border-style: solid;
 }
+
+/*
+  - HOW TO PLAY SECTION -
+*/
 
 /* When the user clicks on How To Play, this section appears */
 #how-to {
@@ -150,6 +180,7 @@ cite > a {
   text-decoration: none;
 }
 
+/* Divs whose backgrounds are the arrows*/
 #back,
 #advance {
   display: inline-block;
@@ -160,7 +191,7 @@ cite > a {
   background-size: 0.75rem;
 }
 
-/* Change the cursor to indicate that the user can click */
+/* Change the cursor to indicate that the user can click on the arrows*/
 #back,
 #advance:hover {
   cursor: pointer;
@@ -170,6 +201,16 @@ cite > a {
   /* Rotate the right arrow so it points to the left side */
   rotate: 180deg;
 }
+
+/*
+
+  
+  
+  >-------------- FOOTER --------------<
+  
+
+
+*/
 
 footer {
   height: 10%;
@@ -184,10 +225,12 @@ footer {
   align-content: center;
 }
 
+/* "Contact" header */
 footer > h2 {
   font-size: 1.5rem;
 }
 
+/* Divs that wraps means of contact */
 #contact {
   display: flex;
   justify-content: space-between;
@@ -197,6 +240,16 @@ footer > h2 {
 
   /* text-align: center; Maybe? */
 }
+
+/*
+
+  
+  
+  >-------------- MEDIA QUERIES --------------<
+  
+
+
+*/
 
 @media (max-height: 490px) {
   #how-to {
@@ -241,7 +294,6 @@ footer > h2 {
     width: 100%;
     max-width: 100vw;
   }
-
   #menu {
     width: 100%;
   } */

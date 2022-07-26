@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- META TAGS -->
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,25 +18,32 @@
       rel="stylesheet"
     />
 
+    <link rel="shortcut icon" href="./Images/icon.png" type="image/x-icon" />
+
+    <!-- TITLE -->
     <title>BlackJack</title>
   </head>
   <body>
+    <!-- HEADER -->
     <header>
       <img src="Images/poker-cards.png" alt="" />
       <h1>Black<span>Jack</span></h1>
     </header>
+
+    <!-- MAIN -->
     <main>
       <section id="menu">
-        <div class="button">
-          <!-- Button to play -->
-          <button><h2>Play</h2></button>
-        </div>
-        <hr />
         <div>
-          <!-- Doesn't need to be button -->
-          <div class="button">
-            <button><h2>How to play</h2></button>
-          </div>
+          <button>Play</button>
+        </div>
+
+        <!-- Division v -->
+        <hr />
+        <!-- Division ^ -->
+
+        <div>
+          <button>How to play</button>
+          <!-- Section teaching to play -->
           <section id="how-to" hidden>
             <blockquote cite="https://www.casino.org">
               The goal of blackjack is to get as close as possible to 21 without
@@ -43,7 +51,9 @@
               dealer goes over 21, they bust and lose the game. The same goes
               for you. Click on the arrow to continue.
             </blockquote>
+            <!-- Arrow that returns -->
             <div id="back"></div>
+            <!-- Citation of casino.org -->
             <cite>
               <a
                 href="https://www.casino.org/blackjack/how-to-play/"
@@ -52,11 +62,14 @@
                 - casino.org
               </a>
             </cite>
+            <!-- Arrow that advances -->
             <div id="advance"></div>
           </section>
         </div>
       </section>
     </main>
+
+    <!-- FOOTER -->
     <footer>
       <h2>Contact:</h2>
       <div id="contact">
