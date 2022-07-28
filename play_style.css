@@ -90,19 +90,64 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .name {
-  width: 80%;
-  background-color: blueviolet;
+  flex-basis: 17%; /* Height based on the table element */
+  width: 40%; /* Width based on the table */
+  background-color: rgb(44, 44, 44);
+  color: rgb(230, 230, 230);
+  border: solid rgb(44, 44, 44) 0.25rem;
+  border-radius: 0.35rem;
+
+  display: flex;
+
+  flex-direction: column;
+  text-align: center; /* This aligned even inside the h2 (see if this works in buttons too) and worked even with display (but I had to change the flex direction to column) */
+  justify-content: center;
+
+  font-size: 1.35rem;
+}
+
+#dealer > .name {
+  margin-top: 2.05rem; /* player's gap + height of buttons */
+}
+
+#player > .name {
+  /* margin-bottom: 0.25rem; */
+}
+
+#dealer {
+  justify-content: flex-start;
 }
 
 #player {
   justify-content: flex-end;
 }
 
-#dealer {
-  justify-content: flex-start;
+/* BUTTONS */
+button {
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  /* Remove background and border */
+  background-color: transparent;
+  border: none;
+
+  /* Remove padding */
+  padding: 0;
+
+  /* Alig text in center, this way even when te display is really thin, the text will continue centered */
+  text-align: center;
+
+  /* Disable selection of these texts */
+  user-select: none;
+}
+
+.hand {
+  background-color: blue;
+  flex-basis: 60%;
 }
 
 /* Edit divs that wrap the buttons and the section that teaches to play */
@@ -133,25 +178,6 @@ main {
   justify-content: center;
   align-items: center;
   gap: 20%;
-}
-
-/* BUTTONS */
-button {
-  font-size: 2rem;
-  font-weight: bold;
-
-  /* Remove background and border */
-  background-color: transparent;
-  border: none;
-
-  /* Remove padding */
-  padding: 0;
-
-  /* Alig text in center, this way even when te display is really thin, the text will continue centered */
-  text-align: center;
-
-  /* Disable selection of these texts */
-  user-select: none;
 }
 
 /* Activates when pointer is on top of "Play" or "How to play" */
