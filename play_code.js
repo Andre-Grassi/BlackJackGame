@@ -32,47 +32,26 @@ function getCardUrl(suit, name) {
   for (const suit_property in cards) {
     // Checks if the suit iterated is equal to the suit passed as arg
     if (suit_property == suit) {
-      // Iterates over the elements of the array that each suit has
-      cards[suit].forEach(el => {
-        // If the element is equal to the card name passed then return the URL of the given card (array = [name, URL])
-        if (el == name) return el[1]
+      // Iterates over the arrays that each suit has
+      let url = cards[suit].forEach(el => {
+        // console.log(el[1])
+        // If the element name (el[0]) is equal to the card name passed then return the URL of the given card (array = [name, URL])
+        console.log(el[0], name)
+        if (el[0] == name) {
+          console.log('entered')
+          // console.log(el[1])
+
+          // el[1] = URL
+          return 's'
+        }
       })
+      console.log(url)
+      // console.log(url)
     }
   }
 }
 
-let card1 = new Card('clubs', 'ace')
+// let card1 = new Card('clubs', 'ace')
 
-// const cards = ['clubs'][('ace', 'cards_images_url+/clubs/c_ace')][
-//   ('eight', `${cards_images_url}/clubs/c_eight`)
-// ]
-
-// console.log(cards[0][0])
-
-console.log(cards.clubs[0][1])
-
-// switch (name) {
-//   case 'ace':
-//     return cards.clubs[0][1]
-
-//   case 'two':
-//     return cards.clubs[0][2]
-
-//   case 'three':
-//     return cards.clubs[0][3]
-
-//   case 'four':
-//     return cards.clubs[0][4]
-
-//   case 'ace':
-//     return cards.clubs[0][1]
-
-//   case 'two':
-//     return cards.clubs[0][2]
-
-//   case 'three':
-//     return cards.clubs[0][3]
-
-//   case 'four':
-//     return cards.clubs[0][4]
-// }
+let card2 = getCardUrl('clubs', 'two')
+// console.log(card2)
