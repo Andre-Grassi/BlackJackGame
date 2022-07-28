@@ -1,10 +1,15 @@
-/* ADDED BOLD TO BUTTONS, changed footer bg color */
+/* ADDED link in both headers/ */
 
 :root {
   --main-bg-color: black;
   --sec-bg-color: rgb(77, 77, 77);
-
   --main-txt-color: white;
+
+  --border-rad: 0.35rem;
+  --btn-padding: 0.25rem;
+
+  --name-width: 40%;
+  --name-max-width: 22.5rem;
   /* --sec-txt-color: black; */
 }
 
@@ -38,7 +43,7 @@ body {
 
 header {
   background-color: var(--main-bg-color);
-  min-height: 7rem;
+  min-height: 7.5rem; /*When it's 7rem it causes the img to overlap pay attention to this on style.css */
 
   display: flex;
   flex-direction: column;
@@ -95,11 +100,13 @@ main {
 
 .name {
   flex-basis: 17%; /* Height based on the table element */
-  width: 40%; /* Width based on the table */
+  width: var(--name-width); /* Width based on the table */
+  max-width: var(--name-max-width);
   background-color: rgb(44, 44, 44);
   color: rgb(230, 230, 230);
-  border: solid rgb(44, 44, 44) 0.25rem;
-  border-radius: 0.35rem;
+  border: solid rgb(44, 44, 44) 0;
+  padding: 0.25rem;
+  border-radius: var(--border-rad);
 
   display: flex;
 
@@ -126,28 +133,67 @@ main {
   justify-content: flex-end;
 }
 
+.actions {
+  width: var(--name-width);
+  max-width: var(--name-max-width);
+
+  display: flex;
+  justify-content: space-around;
+}
+
 /* BUTTONS */
 button {
-  font-size: 1.5rem;
+  /* Font */
+  font-size: 1.25rem;
   font-weight: bold;
 
-  /* Remove background and border */
-  background-color: transparent;
-  border: none;
+  /* Bg */
+  background-color: white;
 
-  /* Remove padding */
-  padding: 0;
+  /* Bg transition when mouse isn't on top of it */
+  transition: background-color 0.5s;
+
+  /* Border */
+  border: solid white 0;
+  border-radius: var(--border-rad);
+
+  /* Padding */
+  padding: var(--btn-padding);
 
   /* Alig text in center, this way even when te display is really thin, the text will continue centered */
   text-align: center;
 
   /* Disable selection of these texts */
   user-select: none;
+
+  /* Change cursor to pointer */
+  cursor: pointer;
 }
+
+/* Activates when pointer is on top of "Hit" or "Stand" */
+button:hover {
+  /* Change color background */
+  background-color: rgb(210, 0, 0);
+  transition: background-color 0.5s;
+}
+
+/* button:active {
+  bg
+} */
 
 .hand {
   background-color: blue;
-  flex-basis: 60%;
+  height: 60%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.card {
+  width: 50%;
+  max-height: 9rem; /* make this max-height lower when vh is too low */
 }
 
 /* Edit divs that wrap the buttons and the section that teaches to play */
@@ -178,17 +224,6 @@ button {
   justify-content: center;
   align-items: center;
   gap: 20%;
-}
-
-/* Activates when pointer is on top of "Play" or "How to play" */
-button:hover,
-button > a:hover {
-  /* Change color of text */
-  color: rgb(210, 0, 0);
-  transition: color 0.5s;
-
-  /* Change cursor to pointer */
-  cursor: pointer;
 }
 
 /* Line that separates both buttons */

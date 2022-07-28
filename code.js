@@ -1,15 +1,17 @@
-// Header
-let howTo = document.querySelector('#menu > div:last-child > h2 ')
+// Button "How to play"
+let howTo = document.querySelector('#menu > div:last-child > button ')
 
 // Text teaching how to play
 let textRules = document.querySelector('blockquote')
 
+// Button in listening for clicks
 howTo.addEventListener('click', showRules)
 
 let isActive = false
 function showRules() {
+  // Selecting element to hide after pressing "How to play" button
   let hideList = document.querySelectorAll(
-    '#menu > div:first-child, #menu > hr'
+    '#menu > div:first-child > button, #menu > hr'
   )
 
   // If the rules are shown, then isActive = true, otherwise it's false
@@ -28,15 +30,18 @@ function showRules() {
   let menu = document.getElementById('menu')
   menuStyle = menu.style
 
-  // If text is shown, disable background and change the text of the h2 to 'Menu' (so the user can see how to come back to the menu), otherwise show it and change the header's text to 'How to play' again
-  // Disable background, changes header's text
+  // If text is shown, disable background, change the text of the button to 'Menu' (so the user can see how to come back to the menu) and change the #menu justify-content property to "flex-start", which centralizes better the text. Otherwise show it, change the button's text to 'How to play' again and change justify-content property to "center"
+  // Disable background, changes button's text, change justify-content of #menu
   if (isActive == true) {
     menuStyle.backgroundImage = 'none'
     howTo.textContent = 'Menu'
+    menuStyle.justifyContent = 'flex-start'
   } else {
-    // Re-enable background, changes header's text
-    menuStyle.backgroundImage = 'url(Images/clover.png), url(Images/spade.png)'
+    // Re-enable background, changes button's text, change justify-content of #menu
+    menuStyle.backgroundImage =
+      'url(../Images/clover.png), url(../Images/spade.png)'
     howTo.textContent = 'How to play'
+    menuStyle.justifyContent = 'center'
   }
 }
 
