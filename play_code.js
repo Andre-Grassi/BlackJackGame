@@ -28,30 +28,20 @@ class Card {
 // Impure function (card is outside of this function and is not passed as an argument)
 // Function to get the URL of the image of the card passed
 function getCardUrl(suit, name) {
-  // Iterates over suits of cards object
+  // Iterates over suits of cards object (for-in: iterates over properties of an object)
   for (const suit_property in cards) {
     // Checks if the suit iterated is equal to the suit passed as arg
     if (suit_property == suit) {
-      // Iterates over the arrays that each suit has
-      let url = cards[suit].forEach(el => {
-        // console.log(el[1])
+      // Iterates over the arrays that the specified suit has (for-of: iterates over elements of an array-like object)
+      for (const el of cards[suit]) {
         // If the element name (el[0]) is equal to the card name passed then return the URL of the given card (array = [name, URL])
-        console.log(el[0], name)
         if (el[0] == name) {
-          console.log('entered')
-          // console.log(el[1])
-
-          // el[1] = URL
-          return 's'
+          return el[1]
         }
-      })
-      console.log(url)
-      // console.log(url)
+      }
     }
   }
 }
 
-// let card1 = new Card('clubs', 'ace')
-
-let card2 = getCardUrl('clubs', 'two')
-// console.log(card2)
+let card1 = new Card('clubs', 'ace')
+console.log(card1)
