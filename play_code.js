@@ -1,19 +1,34 @@
 const cards_url = '../Images/cards_images'
 const DECK = {
   clubs: [
-    ['ace', `${cards_url}/clubs/c_ace`],
-    ['two', `${cards_url}/clubs/c_two`],
-    ['three', `${cards_url}/clubs/c_three`],
-    ['four', `${cards_url}/clubs/c_four`],
-    ['five', `${cards_url}/clubs/c_five`],
-    ['six', `${cards_url}/clubs/c_six`],
-    ['seven', `${cards_url}/clubs/c_seven`],
-    ['eight', `${cards_url}/clubs/c_eght`],
-    ['nine', `${cards_url}/clubs/c_nine`],
-    ['ten', `${cards_url}/clubs/c_ten`],
-    ['jack', `${cards_url}/clubs/c_jack`],
-    ['queen', `${cards_url}/clubs/c_queen`],
-    ['king', `${cards_url}/clubs/c_king`]
+    ['ace', `${cards_url}/clubs/c_ace.png`],
+    ['two', `${cards_url}/clubs/c_two.png`],
+    ['three', `${cards_url}/clubs/c_three.png`],
+    ['four', `${cards_url}/clubs/c_four.png`],
+    ['five', `${cards_url}/clubs/c_five.png`],
+    ['six', `${cards_url}/clubs/c_six.png`],
+    ['seven', `${cards_url}/clubs/c_seven.png`],
+    ['eight', `${cards_url}/clubs/c_eght.png`],
+    ['nine', `${cards_url}/clubs/c_nine.png`],
+    ['ten', `${cards_url}/clubs/c_ten.png`],
+    ['jack', `${cards_url}/clubs/c_jack.png`],
+    ['queen', `${cards_url}/clubs/c_queen.png`],
+    ['king', `${cards_url}/clubs/c_king.png`]
+  ],
+  spades: [
+    ['ace', `${cards_url}/spades/s_ace`],
+    ['two', `${cards_url}/spades/s_two`],
+    ['three', `${cards_url}/spades/s_three`],
+    ['four', `${cards_url}/spades/s_four`],
+    ['five', `${cards_url}/spades/s_five`],
+    ['six', `${cards_url}/spades/s_six`],
+    ['seven', `${cards_url}/spades/s_seven`],
+    ['eight', `${cards_url}/spades/s_eght`],
+    ['nine', `${cards_url}/spades/s_nine`],
+    ['ten', `${cards_url}/spades/s_ten`],
+    ['jack', `${cards_url}/spades/s_jack`],
+    ['queen', `${cards_url}/spades/s_queen`],
+    ['king', `${cards_url}/spades/s_king`]
   ]
 }
 
@@ -69,13 +84,28 @@ let dealerHand = []
 // Hit button
 const hitBtn = document.getElementById('hit')
 
-hitBtn.addEventListener('click', addCard(playerHand))
+hitBtn.addEventListener('click', addCard)
+
+// Declares variables that will be true if the player made the specific choice, or false in case he didn't
+let hit = false
+let stand = false
 
 function addCard(hand) {
-  const index = hand.length <= 1 ? 0 : hand.length - 1
+  /* If the arg passed is not dealerHand then it's the playerHand (added this because playerHand can't be passed as an arg in the eventListener) */
+  if (hand != dealerHand) {
+    // Checks if player has already made his choice
+    if (hit == true || stand == true) return
 
-  hand[index] = getRandCard()
-  console.log(hand[index])
+    hand = playerHand
+    hit = true
+  }
+
+  // Gets a random card from the deck
+  nextCard = getRandCard()
+  // Push the random card into the hand
+  hand.push(nextCard)
+
+  showCard(nextCard, hand)
 }
 
 function getRandCard() {
@@ -132,7 +162,7 @@ function getRandName() {
       return 'seven'
 
     case 7:
-      return 'eigh'
+      return 'eight'
 
     case 8:
       return 'nine'
@@ -151,5 +181,16 @@ function getRandName() {
 
     default:
       throw new Error("Couldn't return any name")
+  }
+}
+
+let playerHandTag = document.querySelector('#player > .hand')
+let dealerHandTag = document.querySelector('#dealer > .hand')
+
+function showCard(card, hand) {
+  if (hand == playerHand) {
+    playerHandTag.innerHTML =
+      playerHandTag.innerHTML + `<img class="card" src="${card.url}"></img>`
+    console.log(card.url)
   }
 }
